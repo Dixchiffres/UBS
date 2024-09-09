@@ -1,0 +1,11 @@
+title: UBS
+description: Site de banque en ligne
+baseurl: ""
+url: "https://github.com/Dixchiffres/UBS.git"
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+markdown: kramdown

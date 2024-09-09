@@ -1,24 +1,34 @@
-/* Styles généraux */
+/* Styles généraux pour le corps de la page */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    max-width: 1200px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles pour la barre latérale */
 .sidebar {
-    width: 250px;
-    background-color: #333;
+    background-color: #e30613; /* Couleur UBS */
     color: #fff;
-    padding: 1rem;
+    padding: 20px;
 }
 
 .sidebar-header {
     text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 .menu {
@@ -27,163 +37,131 @@ body {
 }
 
 .menu li {
-    margin: 1rem 0;
+    margin: 15px 0;
 }
 
 .menu a {
     color: #fff;
     text-decoration: none;
+    font-size: 18px;
     display: block;
-    padding: 0.5rem;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 .menu a:hover {
-    background-color: #555;
+    background-color: #b0040e;
 }
 
+/* Styles pour le contenu principal */
 .content {
-    flex: 1;
-    padding: 2rem;
+    padding: 20px;
 }
 
 header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .home-btn {
-    display: inline-block;
-    background-color: #333;
+    background-color: #e30613;
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.home-btn:hover {
-    background-color: #555;
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
+.home-btn:hover {
+    background-color: #b0040e;
+}
+
 .profile-container {
-    display: inline-block;
-    position: relative;
-    margin-left: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .profile-photo {
-    width: 50px; /* Ajuste la largeur selon ton besoin */
-    height: 50px; /* Ajuste la hauteur selon ton besoin */
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    object-fit: cover; /* Assure que l'image est bien cadrée */
-    border: 2px solid #fff; /* Optionnel, pour un contour blanc */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
+    margin-right: 15px;
 }
 
-.profile-info {
-    display: none; /* Masqué par défaut */
-    position: absolute;
-    top: 60px; /* Positionné en dessous de la photo */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    white-space: nowrap;
-    z-index: 10; /* Assure que la bulle est au-dessus des autres éléments */
+.profile-info p {
+    margin: 2px 0;
+    font-size: 14px;
 }
 
-.profile-container:hover .profile-info {
-    display: block; /* Affiche la bulle lorsque la souris survole la photo */
-}
-
-/* Styles pour les sections */
-.billing-section, .payment-info {
-    margin-bottom: 2rem;
+/* Styles pour la section de facturation */
+.billing-section {
+    margin-top: 20px;
 }
 
 .billing-card {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.current-plan, .next-payment {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    width: 48%;
+.billing-card div {
+    text-align: center;
 }
 
-.current-plan p, .next-payment p {
-    margin: 0;
-}
-
-.change-plan-btn, .manage-payments-btn, .buy-storage-btn {
-    background-color: #333;
+.toggle-btn {
+    background-color: #e30613;
     color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 4px;
     cursor: pointer;
-}
-
-.change-plan-btn:hover, .manage-payments-btn:hover, .buy-storage-btn:hover {
-    background-color: #555;
     transition: background-color 0.3s;
 }
 
-.payment-history .payment-item {
+.toggle-btn:hover {
+    background-color: #b0040e;
+}
+
+.payment-history, .billing-details {
     background-color: #fff;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
 }
 
-.payment-item.completed {
-    border-left: 5px solid green;
+.payment-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
-.payment-item .status {
+.payment-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.status {
     font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 4px;
 }
 
-.payment-item .status.pending {
-    color: orange;
+.status.pending {
+    background-color: #ffcc00;
+    color: #fff;
 }
 
-.payment-item .status.completed {
-    color: green;
-}
-
-.storage-bar {
-    background-color: #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    height: 20px;
-    margin-bottom: 1rem;
-}
-
-.used-storage {
+.status.completed {
     background-color: #4caf50;
-    height: 100%;
-    width: 0%; /* Ajuste le pourcentage selon l'utilisation */
-}
-/* Styles pour la date et l'heure */
-#date {
-    font-size: 1.2em;
-    color: #333;
-    margin: 20px 0;
-}
-#time {
-    font-size: 1.5em;
-    color: #333;
-    margin: 10px 0;
+    color: #fff;
 }
